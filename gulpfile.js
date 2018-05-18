@@ -22,7 +22,7 @@ var paths =  {
     "dest": "dist/"
   },
   "icons": {
-    "src": "src/icons/**",
+    "src": "src/icons/**/*",
     "dest": "dist/icons/"
   },
   "media": {
@@ -114,7 +114,7 @@ gulp.task('icons', function() {
         },
       },
     }))
-    //.pipe(gulp.dest(paths.icons.dest))
+    .pipe(gulp.dest(paths.icons.dest))
     .pipe(duration('Built Icons'))
     .pipe(reload({ stream: true }));
 });
