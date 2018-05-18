@@ -1,0 +1,207 @@
+//
+// Component
+//
+
+
+// IE10 in Windows (Phone) 8
+//
+// Support for responsive views via media queries is kind of borked in IE10, for
+// Surface/desktop in split view and for Windows Phone 8. This particular fix
+// must be accompanied by a snippet of JavaScript to sniff the user agent and
+// apply some conditional CSS to *only* the Surface/desktop Windows 8. Look at
+// our Getting Started page for more information on this bug.
+//
+// For more information, see the following:
+//
+// Issue: https://github.com/twbs/bootstrap/issues/10497
+// Docs: http://getbootstrap.com/getting-started/#support-ie10-width
+// Source: http://timkadlec.com/2013/01/windows-phone-8-and-device-width/
+// Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+
+@-ms-viewport {
+  width: device-width;
+}
+
+
+//
+// Visibility Base
+//
+
+
+.u-visible-xsmall-block,
+.u-visible-xsmall-inline,
+.u-visible-xsmall-inline-block,
+.u-visible-small-block,
+.u-visible-small-inline,
+.u-visible-small-inline-block,
+.u-visible-medium-block,
+.u-visible-medium-inline,
+.u-visible-medium-inline-block,
+.u-visible-large-block,
+.u-visible-large-inline,
+.u-visible-large-inline-block {
+  display: none !important;
+}
+
+
+//
+// Visibility Extra Small
+//
+
+
+.u-visible-xsmall-block {
+  @media (max-width: @global-screen-xsmall-max) {
+    display: block !important;
+  }
+}
+
+.u-visible-xsmall-inline {
+  @media (max-width: @global-screen-xsmall-max) {
+    display: inline !important;
+  }
+}
+
+.u-visible-xsmall-inline-block {
+  @media (max-width: @global-screen-xsmall-max) {
+    display: inline-block !important;
+  }
+}
+
+
+//
+// Visibility Small
+//
+
+
+.u-visible-small-block {
+  @media (min-width: @global-screen-small-min) and (max-width: @global-screen-small-max) {
+    display: block !important;
+  }
+}
+
+.u-visible-small-inline {
+  @media (min-width: @global-screen-small-min) and (max-width: @global-screen-small-max) {
+    display: inline !important;
+  }
+}
+
+.u-visible-small-inline-block {
+  @media (min-width: @global-screen-small-min) and (max-width: @global-screen-small-max) {
+    display: inline-block !important;
+  }
+}
+
+
+//
+// Visibility Medium
+//
+
+
+.u-visible-medium-block {
+  @media (min-width: @global-screen-medium-min) and (max-width: @global-screen-medium-max) {
+    display: block !important;
+  }
+}
+
+.u-visible-medium-inline {
+  @media (min-width: @global-screen-medium-min) and (max-width: @global-screen-medium-max) {
+    display: inline !important;
+  }
+}
+
+.u-visible-medium-inline-block {
+  @media (min-width: @global-screen-medium-min) and (max-width: @global-screen-medium-max) {
+    display: inline-block !important;
+  }
+}
+
+
+//
+// Visibility Large
+//
+
+
+.u-visible-large-block {
+  @media (min-width: @global-screen-large-min) {
+    display: block !important;
+  }
+}
+
+.u-visible-large-inline {
+  @media (min-width: @global-screen-large-min) {
+    display: inline !important;
+  }
+}
+
+.u-visible-large-inline-block {
+  @media (min-width: @global-screen-large-min) {
+    display: inline-block !important;
+  }
+}
+
+
+//
+// Hidden
+//
+
+
+.u-hidden-xsmall {
+  @media (max-width: @global-screen-xsmall-max) {
+    display: none !important;
+  }
+}
+
+.u-hidden-small {
+  @media (min-width: @global-screen-small-min) and (max-width: @global-screen-small-max) {
+    display: none !important;
+  }
+}
+
+.u-hidden-medium {
+  @media (min-width: @global-screen-medium-min) and (max-width: @global-screen-medium-max) {
+    display: none !important;
+  }
+}
+
+.u-hidden-large {
+  @media (min-width: @global-screen-large-min) {
+    display: none !important;
+  }
+}
+
+
+//
+// Visibility For Print
+//
+// Media queries are placed on the inside to be mixin-friendly.
+
+
+.u-visible-print-block {
+  display: none !important;
+
+  @media print {
+    display: block !important;
+  }
+}
+
+.u-visible-print-inline {
+  display: none !important;
+
+  @media print {
+    display: inline !important;
+  }
+}
+
+.u-visible-print-inline-block {
+  display: none !important;
+
+  @media print {
+    display: inline-block !important;
+  }
+}
+
+.u-hidden-print {
+  @media print {
+    display: none !important;
+  }
+}

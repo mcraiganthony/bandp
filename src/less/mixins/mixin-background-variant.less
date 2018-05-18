@@ -1,0 +1,13 @@
+//
+// Background Variant Mixin
+//
+
+
+.mixin-bg-variant(@global-color) {
+  background-color: @global-color !important;
+
+  a&:hover,
+  a&:focus {
+    background-color: darken(@global-color, 10%) !important;
+  }
+}

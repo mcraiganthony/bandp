@@ -1,0 +1,307 @@
+//
+// Variables
+//
+
+
+@button-font-weight: normal;
+@button-transition: color 0.25s @global-trans-timing-cubic, background-color 0.25s @global-trans-timing-cubic;
+
+@button-bg-size-active: 200% 200%;
+@button-box-shadow: @global-shadow-interact;
+
+@button-link-disabled-color: @global-color-gray-light;
+
+@button-border-radius: @global-border-radius;
+
+@button-font-size-large: @global-font-size-medium;
+@button-font-size-base: @global-font-size-base;
+@button-font-size-small: @global-font-size-small;
+
+@button-height-base: @global-height;
+@button-height-large: @global-height-large;
+@button-height-small: @global-height-small;
+
+@button-padding-base: @global-whitespace-medium;
+@button-padding-large: @global-whitespace-base;
+@button-padding-small: (@global-whitespace-small + (@global-whitespace-xsmall / 2));
+
+@button-default-color: @global-font-color;
+@button-default-bg-color: lighten(@global-color-black, 92.5%);
+@button-default-border: lighten(@global-color-black, 80%);
+
+@button-primary-color: @global-color-white;
+@button-primary-bg-color: @global-color-primary;
+@button-primary-border: darken(@button-primary-bg-color, 5%);
+
+@button-secondary-color: @global-color-white;
+@button-secondary-bg-color: @global-color-secondary;
+@button-secondary-border: darken(@global-color-secondary, 5%);
+
+@button-accent-color: @global-color-white;
+@button-accent-bg-color: @global-color-accent;
+@button-accent-border: darken(@global-color-accent, 5%);
+
+@button-danger-color: @global-color-white;
+@button-danger-bg-color: @global-color-danger;
+@button-danger-border: darken(@global-color-danger, 5%);
+
+@button-outline-primary-color: @global-color-primary;
+@button-outline-primary-border: @global-color-primary;
+@button-outline-primary-hover-bg: fade(@global-color-primary, 10%);
+
+@button-outline-reversed-color: @global-color-white;
+@button-outline-reversed-border: @global-color-white;
+@button-outline-reversed-hover-bg: fade(@global-color-white, 10%);
+@button-outline-reversed-hover-border: @global-color-white;
+
+@badge-border-radius: @global-border-radius;
+@badge-horizontal-padding: @global-whitespace-xsmall;
+@badge-vertical-padding: (@global-whitespace-xsmall / 2);
+
+
+//
+// Component
+//
+
+
+// 1. Correct inability to style clickable `input` types in iOS.
+// 2. Remove margins in Chrome, Safari and Opera.
+// 3. Normalizes styles for `button`.
+// 4. Standardize `overflow` set to `hidden` for overflow text.
+// 5. Correct `font` properties and `color` not being inherited for `button`.
+// 6. Address inconsistent `text-transform` inheritance which is only inherit in Firefox and IE
+// 7. Style
+// 8. `line-height` is used to create a height
+// 9. `min-height` is necessary for `input` elements in Firefox and Opera because `line-height` is not working.
+// 10. Reset button group whitespace hack
+// 11. Required for `a`.
+// 12. Align text to left to resolve ellipsis half-pixel jitterines while resizing
+// 13. Do not wrap buttons
+// 14. Prevent selection of text
+// 15. Removes inner padding and border in Firefox 4+.
+.button {
+  // 1
+  appearance: none;
+  // 2
+  margin: 0;
+  // 3
+  border: 1px solid transparent;
+  // 4
+  overflow: hidden;
+  // 5
+  font: inherit;
+  font-weight: @button-font-weight;
+  color: @button-default-color;
+  // 6
+  text-transform: none;
+  // 7
+  display: inline-block;
+  padding: 0 @button-padding-base;
+  background-color: transparent;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: @button-border-radius;
+  transition: @button-transition;
+  position: relative;
+  // 8
+  line-height: ~'calc(@{button-height-base} - (2px))';
+  // 9
+  height: @button-height-base;
+  // 10
+  font-size: @button-font-size-base;
+  // 11
+  text-decoration: none;
+  // 12
+  text-align: left;
+  // 13
+  white-space: nowrap;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  // 14
+  user-select: none;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.is-active {
+    color: @button-default-color;
+  }
+
+  // 15
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  // Disabled
+  &[disabled] {
+    &:not(.button--outline-primary):not(.button--outline-reversed):not(.button--link):not(.button--link-muted) {
+      .mixin-button-variant(@button-default-color; @button-default-bg-color; @button-default-border);
+    }
+
+    opacity: @global-opacity-disabled;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Appears within each `<button>`
+// 1. Stop text from shifting on click in IE11
+// 2. Put text content on higher `z-index` to sit on-top of pseudo gradient
+// 3. Resolve vertical text alignment in IE11/Edge
+// 4. Style
+.button__text-wrapper {
+  // 1
+  position: relative;
+  top: 0;
+  left: 0;
+  // 2
+  z-index: 1;
+  // 3
+  height: 100%;
+  // 4
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+//
+// Color variations
+//
+
+
+.button--default {
+  .mixin-button-variant(@button-default-color; @button-default-bg-color; @button-default-border);
+}
+
+.button--primary {
+  .mixin-button-variant(@button-primary-color; @button-primary-bg-color; @button-primary-border);
+}
+
+.button--secondary {
+  .mixin-button-variant(@button-secondary-color; @button-secondary-bg-color; @button-secondary-border);
+}
+
+.button--accent {
+  .mixin-button-variant(@button-accent-color; @button-accent-bg-color; @button-accent-border);
+}
+
+.button--danger {
+  .mixin-button-variant(@button-danger-color; @button-danger-bg-color; @button-danger-border);
+}
+
+.button--outline-primary {
+  .mixin-button-outline-variant(@button-outline-primary-color; @button-outline-primary-border; @global-color-primary; @button-outline-primary-hover-bg);
+
+  // Override for hover/focus state since that is different than default
+  &.is-loading {
+    &:hover,
+    &:focus {
+      .loader-circle {
+        border-color: @global-color-white;
+      }
+    }
+  }
+}
+
+.button--input {
+  .mixin-button-variant(@input-color; @input-bg; @input-border; @shadow: false);
+}
+
+.button--link {
+  .mixin-button-outline-variant(@base-link-color; transparent; @base-link-hover-color; transparent; @shadow: false);
+}
+
+.button--link-muted {
+  .mixin-button-outline-variant(@global-font-color-muted; transparent; @global-font-color; transparent; @shadow: false);
+}
+
+.button--outline-reversed {
+  .mixin-button-outline-variant(@button-outline-reversed-color; @button-outline-reversed-border; @button-outline-reversed-color; @button-outline-reversed-hover-bg; @shadow: false);
+}
+
+
+//
+// Size variations
+//
+
+
+.button--small {
+  .mixin-button-size(@button-height-small; @button-padding-small; @button-font-size-small);
+}
+
+.button--large {
+  .mixin-button-size(@button-height-large; @button-padding-large; @button-font-size-large);
+}
+
+.button--block {
+  display: block;
+  width: 100%;
+}
+
+
+//
+// Icon only
+//
+
+
+.button--icon {
+  padding: 0;
+  width: @button-height-base;
+
+  &.button--large {
+    width: @button-height-large;
+  }
+
+  &.button--small {
+    width: @button-height-small;
+  }
+}
+
+
+//
+// Badge
+//
+
+
+.button__badge {
+  border-radius: @badge-border-radius;
+  font-size: (@global-font-size-base - 0.2rem);
+  line-height: 1;
+  padding: @badge-vertical-padding @badge-horizontal-padding;
+  position: relative;
+  white-space: nowrap;
+
+  &:empty {
+    display: none;
+  }
+}
+
+
+//
+// Loading state
+//
+
+
+// 1. Ensure `.button--reset` also gets relative positioning for loader
+// 2. Hide text
+.button,
+.button--reset {
+  &.is-loading {
+    position: relative; // 1
+
+    .button__text-wrapper {
+      opacity: 0; // 2
+    }
+  }
+}
+
+.button__loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+  z-index: 1;
+}

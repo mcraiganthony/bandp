@@ -1,0 +1,34 @@
+//
+// List Group Mixin
+//
+
+
+.mixin-list-group-item-variant(@state; @background; @global-color) {
+  .list-group__item--@{state} {
+    background-color: @background;
+    color: @global-color;
+
+    a&,
+    button& {
+      color: @global-color;
+
+      .list-group__item__heading {
+        color: inherit;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: darken(@background, 5%);
+        color: @global-color;
+      }
+
+      &.active,
+      &.active:hover,
+      &.active:focus {
+        background-color: @global-color;
+        border-color: @global-color;
+        color: @global-color-white;
+      }
+    }
+  }
+}

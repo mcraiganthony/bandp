@@ -1,0 +1,16 @@
+//
+// Labels Mixin
+//
+
+
+.mixin-label-variant(@global-color) {
+  background-color: @global-color;
+  border: 1px solid @global-color;
+
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken(@global-color, 10%);
+    }
+  }
+}

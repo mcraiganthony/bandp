@@ -1,0 +1,63 @@
+// Note: Used for side-by-side variable content for proper wrapping
+
+
+//
+// Variables
+//
+
+
+@inline-grid-spacing-base: @global-whitespace-base;
+@inline-grid-spacing-small: @global-whitespace-small;
+@inline-grid-spacing-large: @global-whitespace-large;
+
+
+//
+// Component
+//
+
+
+.u-inline-grid {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: (-@inline-grid-spacing-base) 0 0 (-@inline-grid-spacing-base) !important;
+  padding: 0;
+
+  > * {
+    margin-left: @inline-grid-spacing-base !important;
+    margin-top: @inline-grid-spacing-base !important;
+  }
+}
+
+.u-inline-grid--small {
+  margin-left: (-@inline-grid-spacing-small) !important;
+  margin-top: (-@inline-grid-spacing-small) !important;
+
+  > * {
+    margin-left: @inline-grid-spacing-small !important;
+    margin-top: @inline-grid-spacing-small !important;
+  }
+}
+
+.u-inline-grid--large {
+  margin-left: (-@inline-grid-spacing-large) !important;
+  margin-top: (-@inline-grid-spacing-large) !important;
+
+  > * {
+    margin-left: @inline-grid-spacing-large !important;
+    margin-top: @inline-grid-spacing-large !important;
+  }
+}
+
+.u-inline-grid--middle {
+  justify-content: center;
+}
+
+.u-inline-grid--right {
+  justify-content: flex-end;
+}
+
+.u-inline-grid--between {
+  justify-content: space-between;
+}

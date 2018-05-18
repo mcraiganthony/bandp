@@ -1,0 +1,25 @@
+//
+// Alerts Mixin
+//
+
+
+.mixin-alert-variant(@color, @background, @contrast: true) {
+  border: 2px solid @color;
+  background: @background;
+  color: @global-font-color;
+
+  &.alert--solid {
+    border: 0;
+    background: @color;
+
+    & when (@contrast = true) {
+      color: @global-color-white;
+
+      .alert__body {
+        a {
+          color: @global-color-white;
+        }
+      }
+    }
+  }
+}

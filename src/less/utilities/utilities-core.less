@@ -1,0 +1,193 @@
+//
+// Component
+//
+
+
+//
+// Block
+//
+
+
+.u-block {
+  display: block;
+}
+
+.u-inline-block {
+  display: inline-block;
+}
+
+
+//
+// Clearfix
+//
+
+
+.u-clearfix {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+
+//
+// Font Weights
+//
+
+
+.u-font-weight-bold {
+  font-weight: @global-font-weight-bold !important;
+}
+
+.u-font-weight-normal {
+  font-weight: @global-font-weight-normal !important;
+}
+
+
+//
+// Overflow
+//
+
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
+
+.u-overflow-y-auto {
+  overflow-y: auto !important;
+}
+
+
+//
+// Text Alignment
+//
+
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-justify {
+  text-align: justify;
+}
+
+.u-text-left {
+  text-align: left;
+}
+
+/*.u-text-nowrap {
+  white-space: nowrap;
+}*/
+
+.u-text-right {
+  text-align: right;
+}
+
+
+//
+// Text Break
+//
+// See https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+
+.u-text-break {
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+
+//
+// Text Overflow
+//
+// See https://css-tricks.com/flexbox-truncated-text/
+// Ellipsis within flex items can be span or div. Otherwise should be div.
+
+.u-text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+//
+// Text Size
+//
+
+
+.u-text-large {
+  font-size: @global-font-size-large !important;
+}
+
+.u-text-medium {
+  font-size: @global-font-size-medium !important;
+}
+
+.u-text-base {
+  font-size: @global-font-size-base !important;
+}
+
+.u-text-small {
+  font-size: @global-font-size-small !important;
+}
+
+
+//
+// Text Style
+//
+
+
+.u-text-italic {
+  font-style: italic !important;
+}
+
+.u-text-normal {
+  font-style: normal !important;
+}
+
+.u-text-sub {
+  font-size: @global-line-height-small !important;
+}
+
+
+//
+// Text Transform
+//
+
+
+.u-text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.u-text-capitalize-first {
+  &::first-letter {
+    text-transform: uppercase !important;
+  }
+}
+
+.u-text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.u-text-uppercase {
+  text-transform: uppercase !important;
+}
+
+
+//
+// Text Decoration
+//
+
+
+.u-text-underline {
+  text-decoration: underline !important;
+  text-decoration-skip: ink;
+}
+
+.u-text-strikethrough {
+  text-decoration: line-through;
+}
