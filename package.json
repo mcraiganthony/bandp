@@ -1,6 +1,11 @@
 {
   "name": "bandp",
   "version": "1.0.0",
+  "scripts": {
+    "start": "yarn && gulp && gulp server",
+    "deploy": "gulp website",
+    "html": "yarn html"
+  },
   "devDependencies": {
     "assemble": "^0.24.3",
     "browser-sync": "^2.24.4",
@@ -15,7 +20,9 @@
     "gulp-load-plugins": "^1.5.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
+    "gulp-svg-sprite": "^1.4.0",
     "gulp-uglify": "^3.0.0",
+    "jquery": "3.3.1",
     "scrollreveal": "^3.4.0",
     "smoothscroll": "^0.4.0"
   }
