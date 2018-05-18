@@ -77,17 +77,7 @@ gulp.task('html', function() {
 });
 
 // Icons
-/*gulp.task('icons', function() {
-  const path = paths.icons;
-  return gulp.src([paths.icons.src])
-    .pipe(changed(paths.icons.dest))
-    .pipe(gulp.dest(paths.icons.dest))
-    .pipe(reload({stream:true}));
-});*/
-
-
 gulp.task('icons', function() {
-
   return gulp.src([paths.icons.src])
     .pipe(svgsprite({
       shape: {

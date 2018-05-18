@@ -183,20 +183,8 @@
   .mixin-button-variant(@button-secondary-color; @button-secondary-bg-color; @button-secondary-border);
 }
 
-.button--accent {
-  .mixin-button-variant(@button-accent-color; @button-accent-bg-color; @button-accent-border);
-}
-
-.button--danger {
-  .mixin-button-variant(@button-danger-color; @button-danger-bg-color; @button-danger-border);
-}
-
 .button--outline-primary {
   .mixin-button-outline-variant(@button-outline-primary-color; @button-outline-primary-border; @global-color-primary; @button-outline-primary-hover-bg);
-}
-
-.button--input {
-  .mixin-button-variant(@input-color; @input-bg; @input-border; @shadow: false);
 }
 
 .button--link {
@@ -247,51 +235,4 @@
   &.button--small {
     width: @button-height-small;
   }
-}
-
-
-//
-// Badge
-//
-
-
-.button__badge {
-  border-radius: @badge-border-radius;
-  font-size: (@global-font-size-base - 0.2rem);
-  line-height: 1;
-  padding: @badge-vertical-padding @badge-horizontal-padding;
-  position: relative;
-  white-space: nowrap;
-
-  &:empty {
-    display: none;
-  }
-}
-
-
-//
-// Loading state
-//
-
-
-// 1. Ensure `.button--reset` also gets relative positioning for loader
-// 2. Hide text
-.button,
-.button--reset {
-  &.is-loading {
-    position: relative; // 1
-
-    .button__text-wrapper {
-      opacity: 0; // 2
-    }
-  }
-}
-
-.button__loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  line-height: 1;
-  z-index: 1;
 }
