@@ -49,14 +49,27 @@
 
 .site-footer {
   background: #292320;
+  background: linear-gradient(#292320, #110e0d);
   color: @global-color-gray-lightest;
   padding: 8rem @global-whitespace-base;
   text-align: center;
 }
 
+.site-footer__blvd {
+  p {
+    font-size: @global-font-size-small;
+    opacity: .35;
+  }
+}
+
+.site-footer__blvd__logo {
+  opacity: .75;
+  width: 8rem;
+}
+
 .site-footer__mark {
   display: inline-block;
-  margin-bottom: @global-whitespace-large;
+  margin-bottom: 10rem;
   max-width: 32rem;
   opacity: 0.8;
   width: 100%;
