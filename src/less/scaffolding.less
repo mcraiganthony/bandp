@@ -2,5 +2,62 @@
 
 
 .site-wrapper {
+
+}
+
+.site-hero {
+  align-items: center;
+  background-attachment: fixed;
+  background-image: url(../media/hero_white_kitchen.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  //border-bottom: 2rem solid rgba(0,0,0,0.15);
+  //box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
   padding: @global-whitespace-base;
+  //text-align: center;
+  width: 100vw;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    //background: linear-gradient(hsla(0,0%,7%,0),hsla(0,0%,7%,.65));
+    //background: linear-gradient(rgba(255,255,255,0) 50%, rgba(255,255,255,.75));
+    //background: linear-gradient(rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.65));
+    z-index: 1;
+  }
+
+}
+
+.site-hero__logo {
+  max-width: 46rem;
+  //padding-top: 20%;
+  margin-top: -12rem;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+
+.site-footer {
+  background: #292320;
+  color: @global-color-gray-lightest;
+  padding: 8rem @global-whitespace-base;
+  text-align: center;
+}
+
+.site-footer__mark {
+  display: inline-block;
+  margin-bottom: @global-whitespace-large;
+  max-width: 32rem;
+  opacity: 0.8;
+  width: 100%;
 }

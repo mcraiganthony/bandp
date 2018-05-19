@@ -47,7 +47,7 @@ gulp.task('styles', function() {
     .pipe(autoprefixer({ browsers: ['last 2 versions','ie 10'], cascade: false }))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(duration("building styles"))
-    .pipe(notify({ message: "styles task complete" }))
+    //.pipe(notify({ message: "styles task complete" }))
     .pipe(reload({stream:true}));
 });
 
@@ -64,7 +64,7 @@ gulp.task('js', function() {
     .pipe(uglify())
     .pipe(gulp.dest(paths.js.dest))
     .pipe(duration("building js"))
-    .pipe(notify({ message: "js task complete" }))
+    //.pipe(notify({ message: "js task complete" }))
     .pipe(reload({stream:true}));
 });
 
