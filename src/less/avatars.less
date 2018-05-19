@@ -1,0 +1,40 @@
+//
+// Variables
+//
+
+
+@avatar-size-base: 32rem;
+@avatar-size-small: 12rem;
+
+
+//
+// Component
+//
+
+
+// 1. Fix issue with alignment of inlined avatars
+.avatar {
+  background-position: center center;
+  background-size: cover;
+  border-radius: 50%;
+  color: @global-color-white;
+  display: inline-flex;
+  height: @avatar-size-base;
+  margin-bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: relative;
+  width: @avatar-size-base;
+  vertical-align: bottom; // 1
+}
+
+
+//
+// Avatar Modifiers (Sizes)
+//
+
+
+.avatar--small {
+  height: @avatar-size-small;
+  width: @avatar-size-small;
+}
