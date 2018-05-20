@@ -6,6 +6,8 @@
 }
 
 ///////////////////// HERO
+
+
 .site-hero {
   align-items: center;
   background-attachment: fixed;
@@ -45,18 +47,20 @@
 
 
 ///////////////////// INTRO
+
+
 .site-intro {
   background: @global-color-gray-lightest;
+  padding: 4rem 0 12rem;
+  position: relative;
   text-align: center;
-  .site-intro__avatar {
-    box-shadow: @global-shadow-depth-3;
-  }
 }
 
 .site-intro__ampersand {
   color: #000;
   font-size: 10rem;
 }
+
 
 .site-intro__copy {
   font-size: @global-font-size-large;
@@ -65,8 +69,24 @@
 }
 
 
+///////////////////// AVATAR
+
+
+.site-avatar {
+  text-align: center;
+  position: relative;
+  top: -(28rem/2);
+}
+
+.site-avatar__avatar {
+  box-shadow: @global-shadow-depth-3;
+
+}
+
 
 ///////////////////// FOOTER
+
+
 .site-footer {
   background: #292320;
   background: linear-gradient(#292320, #110e0d);
