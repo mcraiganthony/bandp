@@ -10,6 +10,9 @@
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/app.css">
   <style> [data-sr] { visibility: hidden; } </style>
+  <script>
+    !function(e,o){"function"==typeof define&&define.amd?define(["svgloader"],o):"object"==typeof exports?module.exports=o():e.svgloader=o()}(this,function(){"use strict";function e(e){var o=new XMLHttpRequest;o.open("GET",e,!0),o.send(),o.onload=function(e){var t=document.createElement("div");t.innerHTML=o.responseText,document.body.insertBefore(t,document.body.childNodes[0])}}return{load:e}});
+  </script>
 </head>
 <body>
 
@@ -30,6 +33,14 @@
         <p class="site-intro__copy">
           <strong>Board & Plank is Craig Anthony</strong> - Realtor® at The Boulevard Company, Real Estate Investor, Real Estate Software Developer, Product Designer, Amateur Photographer
         </p>
+        <p>| &nbsp;Charleston, South Carolina&nbsp; |</p>
+
+        <figure class="site-intro__avatar avatar" style="background-image: url('media/craig_anthony_headshot.jpg');"></figure>
+
+        <!--<svg class="site-intro__ampersand icon" viewBox="0 0 100 100">
+          <use xlink:href="#icon-ampersand" />
+        </svg>-->
+
 
       </div>
     </div>
@@ -113,8 +124,13 @@
 
   </div> <!-- /site-wrapper -->
 
-  <script src="js/app.js"></script>
 
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      svgloader.load('icons/sprite.svg');
+    });
+  </script>
 
 </body>
 </html>
