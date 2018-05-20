@@ -54,7 +54,7 @@
 @base-hr-border-width: 2px;
 @base-blockquote-padding-left: @global-whitespace-base;
 @base-blockquote-border: @global-border-color;
-@base-blockquote-border-width: 5px;
+@base-blockquote-border-width: 2px;
 @base-blockquote-font-size: @global-font-size-base;
 @base-blockquote-line-height: @global-line-height-base;
 @base-blockquote-font-style: normal;
@@ -436,8 +436,9 @@ address {
 
 // Blockquotes
 blockquote {
-  padding-left: @base-blockquote-padding-left;
+  padding: 0 @base-blockquote-padding-left;
   border-left: @base-blockquote-border-width solid @base-blockquote-border;
+  border-right: @base-blockquote-border-width solid @base-blockquote-border;
   font-size: @base-blockquote-font-size;
   line-height: @base-blockquote-line-height;
   font-style: @base-blockquote-font-style;
