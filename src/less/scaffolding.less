@@ -51,7 +51,7 @@
 
 .site-intro {
   background: @global-color-gray-lightest;
-  padding: 4rem 0 12rem;
+  padding: 4rem 0 0;
   position: relative;
   text-align: center;
 }
@@ -73,14 +73,23 @@
 
 
 .site-avatar {
+  background: linear-gradient(@global-color-gray-lightest @avatar-size-base/2, @global-color-white 0);
+  margin-bottom: 6rem;
   text-align: center;
-  position: relative;
-  top: -(28rem/2);
+  //position: relative;
+  //top: -(28rem/2);
 }
 
 .site-avatar__avatar {
   box-shadow: @global-shadow-depth-3;
+  margin-bottom: @global-whitespace-large;
+}
 
+.site-avatar__social {
+  font-size: 3rem;
+  a {
+    margin: 0 @global-whitespace-medium;
+  }
 }
 
 
