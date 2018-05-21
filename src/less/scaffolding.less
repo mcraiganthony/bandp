@@ -10,7 +10,6 @@
 
 .site-hero {
   align-items: center;
-  background-attachment: fixed;
   background-image: url(../media/hero_white_kitchen.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -33,6 +32,10 @@
     top: 0;
     width: 100%;
     z-index: 1;
+  }
+
+  @media (min-width: @global-screen-small-min) {
+    background-attachment: fixed;
   }
 }
 
@@ -83,9 +86,7 @@
 ///////////////////// DESCRIPTION
 
 
-.site-description {
-
-}
+//.site-description {}
 
 .site-description__ampersand {
   color: #000;
@@ -93,7 +94,13 @@
   //opacity: .25;
   text-align: center;
   .icon {
-    top: 1rem;
+    top: -2rem;
+  }
+
+  @media (min-width: @global-screen-small-min) {
+    .icon {
+      top: 1rem;
+    }
   }
 }
 
@@ -101,9 +108,7 @@
 ///////////////////// BLOCKQUOTE
 
 
-.site-blockquote {
-
-}
+//.site-blockquote {}
 
 
 
